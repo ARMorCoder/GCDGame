@@ -7,6 +7,7 @@ public class PlayerInputHandler : MonoBehaviour
    [SerializeField] Movement movement;
    [SerializeField] int health;
    [SerializeField] int energy;
+   [SerializeField] Transform body;
    ProjectileThrower pT;
 
     void Awake(){
@@ -22,7 +23,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     void Update(){
         if(Input.GetKeyDown(KeyCode.F)){
-            pT.Throw(Vector3.zero);
+            pT.Throw(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
     }
 

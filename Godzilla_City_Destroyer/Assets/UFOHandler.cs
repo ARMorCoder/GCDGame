@@ -8,12 +8,17 @@ public class UFOHandler : MonoBehaviour
     //EnemyProjectileThrower pT;
     [SerializeField] Transform shooter;
     [SerializeField] Transform target;
+    [SerializeField] int health;
     Vector3 shootPos = new Vector3(0,0,0);
     Vector3 tarPos = new Vector3(0, 0, 0);
     void Start()
     {
        SpawnBulletOverTime();
        //MoveAroundOverTime();
+    }
+
+    void Awake(){
+        health = 10;
     }
 
     void Update(){
@@ -49,5 +54,12 @@ public class UFOHandler : MonoBehaviour
             yield return null;
             
          }
+     }
+
+     public void OnTriggerEnter2D(Collider2D obj){
+        if(obj.tag == "FriendlyBullet"){
+            Debug.Log("I've hit an enemy!");
+            health--;
+        }
      }
 }
