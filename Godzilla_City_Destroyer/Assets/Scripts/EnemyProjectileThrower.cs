@@ -9,8 +9,9 @@ public class EnemyProjectileThrower : MonoBehaviour
     [SerializeField] float speed = 5f;
 
     public void Throw(Vector3 tP){
-        Rigidbody2D newProjectileRB = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+        Rigidbody2D newEnemyProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
         tP.z = 0;
-        newProjectileRB.velocity = (tP - transform.position).normalized * speed;
+        newEnemyProjectile.velocity = (tP - transform.position).normalized * speed;
+        Destroy(newEnemyProjectile.gameObject, 3);
     }
 }

@@ -20,12 +20,35 @@ public class PlayerInputHandler : MonoBehaviour
     void Start(){
        // pointsHandler = PointsHandler.singleton; //second fastest option
         Debug.Log("Game Start\n");
+        RegenerateEnergy();
     }
     void Update(){
         if(Input.GetKeyDown(KeyCode.F)){
-            pT.Throw(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            if(energy <= 0){
+                Debug.Log("out of energy!!");
+             }else{ 
+                pT.Throw(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                energy -= 1;
+             }
         }
     }
+
+    void RegenerateEnergy(){
+        StartCoroutine(RegenerateEnergyRoutine());
+        IEnumerator RegenerateEnergyRoutine(){
+            while(true){
+                yield return new WaitForSeconds(4);
+                if(energy == 15){
+                    Debug.Log("FULL ENERGY!!!");
+                }else{
+                    energy += 1;
+                }
+            }
+
+            yield return null;
+            
+         }
+     }
 
     void FixedUpdate(){
         Vector3 vel =  Vector3.zero;
@@ -49,6 +72,7 @@ public class PlayerInputHandler : MonoBehaviour
         if(obj.tag == "EnemyBullet"){
             Debug.Log("I've been hit!");
             health--;
+            Destroy(obj.gameObject);
         }
     }
 }
