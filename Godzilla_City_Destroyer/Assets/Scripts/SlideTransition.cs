@@ -8,10 +8,20 @@ public class SlideTransition : MonoBehaviour
 {
     [SerializeField] Transform outTransform;
     [SerializeField] Transform inTransform;
+    [SerializeField] GameObject winState;
     [SerializeField] float slideTime = 2f;
 
     void Start(){
+        winState.SetActive(false);
         SlideOut();
+    }
+
+    void Update(){
+        if(CentralGameScript.currentState == CentralGameScript.winState){
+            winState.SetActive(true);
+            Debug.Log("You win!!");
+            SlideIn("BossLevel");
+        }
     }
 
     public void SlideOut(){
@@ -40,6 +50,8 @@ public class SlideTransition : MonoBehaviour
             SceneManager.LoadScene(sceneName);
         }
     }
+
+
 
 
 
