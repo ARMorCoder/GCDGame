@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerInputBossLevel : MonoBehaviour
 {
     [SerializeField] MovementBossLevel movement;
-    [SerializeField] int health;
+    public int health = 1;
     [SerializeField] int energy;
     [SerializeField] Transform body;
     ProjectileThrowerBossLevel pT;
 
     void Awake(){
         pT = GetComponent<ProjectileThrowerBossLevel>();
-        health = 25;
+        //change later 
+        health = 5;
         energy = 15;
 
     }
@@ -71,6 +72,9 @@ public class PlayerInputBossLevel : MonoBehaviour
             Debug.Log("I've been hit!");
             health--;
             Destroy(obj.gameObject);
+        }else if(obj.tag == "EnemyMelee"){
+            Debug.Log("I've been hit!");
+            health--;
         }
     }
 }

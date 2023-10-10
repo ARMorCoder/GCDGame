@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerInputHandler : MonoBehaviour
 {
    [SerializeField] Movement movement;
-   [SerializeField] int health;
+   public int health = 1;
    [SerializeField] int energy;
    [SerializeField] Transform body;
    ProjectileThrower pT;
 
     void Awake(){
        pT = GetComponent<ProjectileThrower>();
-        health = 25;
+       //change later
+        health = 5;
         energy = 15;
 
     }
@@ -27,7 +28,8 @@ public class PlayerInputHandler : MonoBehaviour
             if(energy <= 0){
                 Debug.Log("out of energy!!");
              }else{ 
-                pT.Throw(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                pT.Throw(Camera.main.ScreenToWorldPoint(Input.mousePosition)
+                );
                 energy -= 1;
              }
         }

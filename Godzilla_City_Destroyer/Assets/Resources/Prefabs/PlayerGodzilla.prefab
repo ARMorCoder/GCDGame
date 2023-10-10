@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 323927817901644278}
-  health: 0
+  health: 1
   energy: 0
   body: {fileID: 4276852716431743086}
 --- !u!114 &323927817901644278
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6057309867310848981, guid: 74e2dd79d5753c446af95de6703cb850, type: 3}
+  temp: {fileID: 0}
   speed: 5
 --- !u!61 &7616117048425276324
 BoxCollider2D:

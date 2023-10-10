@@ -49,6 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 6809010121615059341}
+  health: 1
+  energy: 0
+  body: {fileID: 0}
 --- !u!50 &4699886321580687794
 Rigidbody2D:
   serializedVersion: 4

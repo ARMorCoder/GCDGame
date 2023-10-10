@@ -9,10 +9,14 @@ public class SlideTransition : MonoBehaviour
     [SerializeField] Transform outTransform;
     [SerializeField] Transform inTransform;
     [SerializeField] GameObject winState;
+    [SerializeField] GameObject loseState;
+    [SerializeField] PlayerInputHandler player;
+    [SerializeField] PlayerInputBossLevel playerBoss;
     [SerializeField] float slideTime = 2f;
 
     void Start(){
         winState.SetActive(false);
+        loseState.SetActive(false);
         SlideOut();
     }
 
@@ -20,7 +24,12 @@ public class SlideTransition : MonoBehaviour
         if(CentralGameScript.currentState == CentralGameScript.winState){
             winState.SetActive(true);
             Debug.Log("You win!!");
+            CentralGameScript.currentState = 0;
             SlideIn("BossLevel");
+        }
+        if(player.health <= 0 || playerBoss.health <= 0){
+            loseState.SetActive(true);
+            SlideIn("TitleScreen");
         }
     }
 

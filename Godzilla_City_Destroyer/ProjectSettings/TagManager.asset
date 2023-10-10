@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - FriendlyBullet
   - Building
+  - EnemyMelee
   layers:
   - Default
   - TransparentFX
