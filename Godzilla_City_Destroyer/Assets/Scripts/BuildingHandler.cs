@@ -17,6 +17,7 @@ public class BuildingHandler : MonoBehaviour
         if(health <= 0){
             //damageEffect.SetActive(false);
             CentralGameScript.currentState += 5;
+            //Debug.Log("Current state is", )
             Destroy(damageEffect.gameObject);
             Destroy(gameObject);
         }
