@@ -726,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6110439538240467138, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7669557494614378426, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: m_Pivot.x
@@ -1395,7 +1395,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1423,6 +1423,7 @@ MonoBehaviour:
   leftAttack: {fileID: 1372744262}
   rightAttack: {fileID: 1462937617}
   health: 0
+  gsc: {fileID: 709143614}
 --- !u!4 &1628959563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5151532697321576722, guid: 4a8db58eec8fa9343b5010a75fb62c16, type: 3}

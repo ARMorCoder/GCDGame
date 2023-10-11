@@ -5,7 +5,7 @@ using UnityEngine;
 public class GiganAnimateStateChanger : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    [SerializeField] string currentState = "";
+    [SerializeField] string currentState = "GiganIdle";
 
     void Start(){
         ChangeAnimationState(currentState);

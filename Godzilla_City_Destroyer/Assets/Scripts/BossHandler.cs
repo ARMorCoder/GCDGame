@@ -12,6 +12,7 @@ public class BossHandler : MonoBehaviour
     Vector3 shootPos = new Vector3(0,0,0);
     Vector3 tarPos = new Vector3(0, 0, 0);
     [SerializeField] int health;
+    [SerializeField] GiganAnimateStateChanger gsc;
     int rnd;
 
     void Start(){
@@ -66,13 +67,17 @@ public class BossHandler : MonoBehaviour
                 yield return new WaitForSeconds(5);
                     rnd = Random.Range(0,9);
                     if(rnd % 2 == 0){
+                        gsc.ChangeAnimationState("GiganLeftAttack");
                         leftAttack.SetActive(true);
                         yield return new WaitForSeconds(2);
                         leftAttack.SetActive(false);
+                        gsc.ChangeAnimationState("GiganIdle");
                     }else{
+                        gsc.ChangeAnimationState("GiganRightAttack");
                         rightAttack.SetActive(true);
                         yield return new WaitForSeconds(2);
                         rightAttack.SetActive(false);
+                        gsc.ChangeAnimationState("GiganIdle");
                     }
                 }
                  yield return null;
