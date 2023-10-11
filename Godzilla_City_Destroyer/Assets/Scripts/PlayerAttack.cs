@@ -36,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
             Collider2D[] buildingsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsBuilding);
                 for (int i = 0; i < buildingsToDamage.Length; i++){
                     buildingsToDamage[i].GetComponent<BuildingHandler>().TakeDamage(damage);
+                    buildingsToDamage[i].gameObject.GetComponent<AudioSource>().Play();
                 }
         }
     }

@@ -35,6 +35,7 @@ public class BuildingHandler : MonoBehaviour
     void OnTriggerEnter2D(Collider2D obj){
         if(obj.tag == "FriendlyBullet"){
             TakeDamage(3);
+           GetComponent<AudioSource>().Play();
             Destroy(obj.gameObject);
         }
     }
