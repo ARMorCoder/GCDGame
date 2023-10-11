@@ -69,12 +69,14 @@ public class BossHandler : MonoBehaviour
                     if(rnd % 2 == 0){
                         gsc.ChangeAnimationState("GiganLeftAttack");
                         leftAttack.SetActive(true);
+                        GetComponent<AudioSource>().Play();
                         yield return new WaitForSeconds(2);
                         leftAttack.SetActive(false);
                         gsc.ChangeAnimationState("GiganIdle");
                     }else{
                         gsc.ChangeAnimationState("GiganRightAttack");
                         rightAttack.SetActive(true);
+                        GetComponent<AudioSource>().Play();
                         yield return new WaitForSeconds(2);
                         rightAttack.SetActive(false);
                         gsc.ChangeAnimationState("GiganIdle");
@@ -87,6 +89,7 @@ public class BossHandler : MonoBehaviour
      void OnTriggerEnter2D(Collider2D obj){
         if(obj.tag == "FriendlyBullet"){
             health--;
+            //obj.GetComponent<AudioSource>().Play();
             Destroy(obj.gameObject);
         }
      }
