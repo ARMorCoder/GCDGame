@@ -14,6 +14,7 @@ public class UFOHandler : MonoBehaviour
     public float t = 0;
     void Start()
     {
+        bullet.GetComponent<SpriteRenderer>().color = Color.green;
         SpawnBulletOverTime();
     }
 
@@ -35,8 +36,8 @@ public class UFOHandler : MonoBehaviour
                 yield return new WaitForSeconds(2);
                 Rigidbody2D newBullet = Instantiate(bullet,transform.position,Quaternion.identity).GetComponent<Rigidbody2D>();
                 tarPos.z = 0;
-                newBullet.velocity = (tarPos - transform.position);
-                Destroy(newBullet.gameObject, 3);
+                newBullet.velocity = (tarPos- transform.position).normalized * 10;
+                Destroy(newBullet.gameObject, 2);
             }
             yield return null;
          }

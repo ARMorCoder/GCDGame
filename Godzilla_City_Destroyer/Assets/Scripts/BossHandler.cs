@@ -18,6 +18,7 @@ public class BossHandler : MonoBehaviour
     int rnd;
 
     void Start(){
+        bullet.GetComponent<SpriteRenderer>().color = Color.red;
         leftAttack.SetActive(false);
         rightAttack.SetActive(false);
         healthText.text = "Gigan: " + health;
