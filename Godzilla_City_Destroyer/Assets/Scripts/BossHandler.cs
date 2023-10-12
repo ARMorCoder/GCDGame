@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHandler : MonoBehaviour
 {
@@ -13,17 +14,19 @@ public class BossHandler : MonoBehaviour
     Vector3 tarPos = new Vector3(0, 0, 0);
     [SerializeField] int health;
     [SerializeField] GiganAnimateStateChanger gsc;
+    [SerializeField] Text healthText;
     int rnd;
 
     void Start(){
         leftAttack.SetActive(false);
         rightAttack.SetActive(false);
+        healthText.text = "Gigan: " + health;
         SpawnBulletOverTime();
         PickAttackOverTime();
     }
 
     void Awake(){
-        health =  15;
+        health =  50;
 
     }
 
@@ -42,13 +45,14 @@ public class BossHandler : MonoBehaviour
             //Destroy(gameObject);
             CentralGameScript.currentState = 80;
         }
+        healthText.text = "Gigan: " + health;
     }
 
      void SpawnBulletOverTime(){
         StartCoroutine(SpawnBulletOverTimeRoutine());
         IEnumerator SpawnBulletOverTimeRoutine(){
             while(true){
-                //yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(1);
                 Rigidbody2D newBullet = Instantiate(bullet,transform.position,Quaternion.identity).GetComponent<Rigidbody2D>();
                 tarPos.z = 0;
                 newBullet.velocity = (tarPos - transform.position);
