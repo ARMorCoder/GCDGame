@@ -12,6 +12,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float attackRange;
     [SerializeField] int damage;
     // Start is called before the first frame update
+
+    void Awake(){
+        damage = 3;
+    }
     void Start()
     {
         

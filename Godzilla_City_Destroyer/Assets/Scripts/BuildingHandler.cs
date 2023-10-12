@@ -16,9 +16,12 @@ public class BuildingHandler : MonoBehaviour
     void Update(){
         if(health <= 0){
             //damageEffect.SetActive(false);
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
             CentralGameScript.currentState += 5;
             //Debug.Log("Current state is", )
             Destroy(damageEffect.gameObject);
+           // gameObject.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject);
         }
         if(health <= 15 && belowDamage != true){
@@ -34,8 +37,8 @@ public class BuildingHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D obj){
         if(obj.tag == "FriendlyBullet"){
-            TakeDamage(3);
-           GetComponent<AudioSource>().Play();
+            TakeDamage(5);
+            GetComponent<AudioSource>().Play();
             Destroy(obj.gameObject);
         }
     }

@@ -11,7 +11,7 @@ public class EnemyProjectileThrower : MonoBehaviour
     public void Throw(Vector3 tP){
         Rigidbody2D newEnemyProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
         tP.z = 0;
-        newEnemyProjectile.velocity = (tP - transform.position).normalized * speed;
+        newEnemyProjectile.velocity = (new Vector3(tP.x, tP.y, 0) - transform.position).normalized * speed;
         Destroy(newEnemyProjectile.gameObject, 3);
     }
 }

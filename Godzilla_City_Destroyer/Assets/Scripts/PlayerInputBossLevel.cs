@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInputBossLevel : MonoBehaviour
 {
     [SerializeField] MovementBossLevel movement;
     public int health = 1;
     [SerializeField] int energy;
-    [SerializeField] Transform body;
+    //[SerializeField] Transform body;
+    [SerializeField] Text healthText;
+    [SerializeField] Text energyText;
     ProjectileThrowerBossLevel pT;
 
     void Awake(){
@@ -18,6 +21,8 @@ public class PlayerInputBossLevel : MonoBehaviour
 
     }
     void Start(){
+        healthText.text = "Health: " + health;
+        energyText.text = "Energy: " + energy;
         RegenerateEnergy();
     }
 
@@ -30,6 +35,8 @@ public class PlayerInputBossLevel : MonoBehaviour
                 energy -= 1;
              }
         }
+        healthText.text = "Health: " + health;
+        energyText.text = "Energy: " + energy;
     }
     void RegenerateEnergy(){
         StartCoroutine(RegenerateEnergyRoutine());

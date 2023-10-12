@@ -9,6 +9,7 @@ TagManager:
   - FriendlyBullet
   - Building
   - EnemyMelee
+  - energyPoint
   layers:
   - Default
   - TransparentFX

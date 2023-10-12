@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -8,19 +9,23 @@ public class PlayerInputHandler : MonoBehaviour
    public int health = 1;
    [SerializeField] int energy;
    [SerializeField] Transform body;
+   [SerializeField] Text healthText;
+   [SerializeField] Text energyText;
    ProjectileThrower pT;
 
     void Awake(){
        pT = GetComponent<ProjectileThrower>();
        //change later
-        health = 5;
-        energy = 15;
+        health = 20;
+        energy = 10;
 
     }
 
     void Start(){
        // pointsHandler = PointsHandler.singleton; //second fastest option
         Debug.Log("Game Start\n");
+        healthText.text = "Health: " + health;
+        energyText.text = "Energy: " + energy;
         RegenerateEnergy();
     }
     void Update(){
@@ -33,6 +38,8 @@ public class PlayerInputHandler : MonoBehaviour
                 energy -= 1;
              }
         }
+        healthText.text = "Health: " + health;
+        energyText.text = "Energy: " + energy;
     }
 
     void RegenerateEnergy(){
@@ -40,7 +47,7 @@ public class PlayerInputHandler : MonoBehaviour
         IEnumerator RegenerateEnergyRoutine(){
             while(true){
                 yield return new WaitForSeconds(4);
-                if(energy == 15){
+                if(energy >= 10){
                     Debug.Log("FULL ENERGY!!!");
                 }else{
                     energy += 1;
@@ -75,6 +82,14 @@ public class PlayerInputHandler : MonoBehaviour
             Debug.Log("I've been hit!");
             health--;
             Destroy(obj.gameObject);
+        }else if(obj.tag == "energyPoint"){
+            AudioSource audio = obj.GetComponent<AudioSource>();
+            audio.Play();
+            energy += 3;
+            int time = 0;
+            obj.GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(obj.gameObject, audio.clip.length);
+
         }
     }
 }

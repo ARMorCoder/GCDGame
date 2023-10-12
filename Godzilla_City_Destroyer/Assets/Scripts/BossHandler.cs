@@ -48,7 +48,7 @@ public class BossHandler : MonoBehaviour
         StartCoroutine(SpawnBulletOverTimeRoutine());
         IEnumerator SpawnBulletOverTimeRoutine(){
             while(true){
-                yield return new WaitForSeconds(2);
+                //yield return new WaitForSeconds(1);
                 Rigidbody2D newBullet = Instantiate(bullet,transform.position,Quaternion.identity).GetComponent<Rigidbody2D>();
                 tarPos.z = 0;
                 newBullet.velocity = (tarPos - transform.position);
