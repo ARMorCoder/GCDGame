@@ -285,8 +285,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 409, y: -41}
-  m_SizeDelta: {x: -564.13, y: 54.950012}
+  m_AnchoredPosition: {x: 301.54, y: -38.950012}
+  m_SizeDelta: {x: -610.65, y: 50.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &249975011
 MonoBehaviour:
@@ -795,6 +795,38 @@ PrefabInstance:
       propertyPath: playerBoss
       value: 
       objectReference: {fileID: 1800118841}
+    - target: {fileID: 2395052069957729048, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 878
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395052069957729048, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 688
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395052069957729048, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395052069957729048, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000039101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678796837337578691, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 878
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678796837337578691, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 688
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678796837337578691, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000014544
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678796837337578691, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000030518
+      objectReference: {fileID: 0}
     - target: {fileID: 3745914092590466886, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: playerBoss
       value: 

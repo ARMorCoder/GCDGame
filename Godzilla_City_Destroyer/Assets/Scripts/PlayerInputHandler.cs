@@ -12,17 +12,19 @@ public class PlayerInputHandler : MonoBehaviour
    [SerializeField] Text healthText;
    [SerializeField] Text energyText;
    ProjectileThrower pT;
+   [SerializeField] AttackAnimationChanger aac;
+   [SerializeField] GameObject attack;
 
     void Awake(){
-       pT = GetComponent<ProjectileThrower>();
-       //change later
+        attack.GetComponent<SpriteRenderer>().enabled = false;
+        pT = GetComponent<ProjectileThrower>();
+        //change later
         health = 20;
         energy = 10;
 
     }
 
     void Start(){
-       // pointsHandler = PointsHandler.singleton; //second fastest option
         Debug.Log("Game Start\n");
         healthText.text = "Health: " + health;
         energyText.text = "Energy: " + energy;
@@ -37,6 +39,12 @@ public class PlayerInputHandler : MonoBehaviour
                 );
                 energy -= 1;
              }
+        }
+        if(Input.GetKeyDown(KeyCode.Space)){
+           attack.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        if(Input.GetKeyUp(KeyCode.Space)){
+           attack.GetComponent<SpriteRenderer>().enabled = false;
         }
         healthText.text = "Health: " + health;
         energyText.text = "Energy: " + energy;
