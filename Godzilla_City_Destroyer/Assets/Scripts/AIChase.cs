@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIChase : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    public GameObject player;
     public float speed;
 
     private float distance;

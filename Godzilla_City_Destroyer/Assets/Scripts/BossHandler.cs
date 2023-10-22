@@ -44,7 +44,7 @@ public class BossHandler : MonoBehaviour
         }*/
         if(health <= 0){
             //Destroy(gameObject);
-            CentralGameScript.currentState = 80;
+            CentralGameScript.currentState = 999;
         }
         healthText.text = "Gigan: " + health;
     }
