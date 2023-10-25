@@ -10,6 +10,7 @@ TagManager:
   - Building
   - EnemyMelee
   - energyPoint
+  - LandEnemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Building
-  - 
+  - LandEnemy
   - 
   - 
   - 

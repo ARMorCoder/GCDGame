@@ -10,7 +10,6 @@ public class UFOHandler : MonoBehaviour
     [SerializeField] int health;
     Vector3 shootPos = new Vector3(0,0,0);
     Vector3 tarPos = new Vector3(0, 0, 0);
-    int rnd = 0;
     public float t = 0;
     void Start()
     {

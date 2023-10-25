@@ -6,7 +6,6 @@ public class ProjectileThrowerBossLevel : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject projectilePrefab;
-    [SerializeField] float speed = 5f;
 
     void Start(){
         //temp = Instantiate(projectilePrefab);

@@ -5,31 +5,22 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
 
-    private float timeBtwAttack;
-    [SerializeField] float startTimeBtwAttack;
     [SerializeField] Transform attackPos;
     [SerializeField] LayerMask whatIsBuilding;
     [SerializeField] float attackRange;
     [SerializeField] int damage;
+    [SerializeField] int footDamage;
+    [SerializeField] LayerMask whatIsTank;
+    [SerializeField] Transform footAttackPOS;
+    [SerializeField] float footAttackRange;
 
     void Awake(){
-        damage = 3;
+        damage = 5;
+        footDamage = 3;
     }
     // Update is called once per frame
     void Update()
     {
-        /*if(timeBtwAttack <= 0){
-            if(Input.GetKey(KeyCode.Space)){
-                Collider2D[] buildingsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsBuilding);
-                for (int i = 0; i < buildingsToDamage.Length; i++){
-                    buildingsToDamage[i].GetComponent<BuildingHandler>().TakeDamage(damage);
-                }
-            }
-            timeBtwAttack = startTimeBtwAttack;
-        }else{
-            timeBtwAttack = Time.deltaTime;
-        }*/
-
         if(Input.GetKeyDown(KeyCode.Space)){
             Collider2D[] buildingsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsBuilding);
                 for (int i = 0; i < buildingsToDamage.Length; i++){
@@ -37,10 +28,17 @@ public class PlayerAttack : MonoBehaviour
                     buildingsToDamage[i].gameObject.GetComponent<AudioSource>().Play();
                 }
         }
+        if(Input.GetKeyDown(KeyCode.V)){
+            Collider2D[] tanksToDamage = Physics2D.OverlapCircleAll(footAttackPOS.position, footAttackRange, whatIsTank);
+            for (int i = 0; i < tanksToDamage.Length; i++){
+                    tanksToDamage[i].GetComponent<TankHandler>().TakeDamage(footDamage);
+            }
+        }
     }
 
     void OnDrawGizmosSelected(){
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Gizmos.DrawWireSphere(footAttackPOS.position, footAttackRange);
     }
 }

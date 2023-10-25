@@ -14,9 +14,12 @@ public class PlayerInputHandler : MonoBehaviour
    ProjectileThrower pT;
    [SerializeField] AttackAnimationChanger aac;
    [SerializeField] GameObject attack;
+   [SerializeField] FootAttackAnimationStateChanger fac;
+   [SerializeField] GameObject footAttack;
 
     void Awake(){
         attack.GetComponent<SpriteRenderer>().enabled = false;
+        footAttack.GetComponent<SpriteRenderer>().enabled = false;
         pT = GetComponent<ProjectileThrower>();
         //change later
         health = 20;
@@ -46,6 +49,11 @@ public class PlayerInputHandler : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Space)){
            attack.GetComponent<SpriteRenderer>().enabled = false;
         }
+        if(Input.GetKeyDown(KeyCode.V)){
+            footAttack.GetComponent<SpriteRenderer>().enabled = true;
+        }if(Input.GetKeyUp(KeyCode.V)){
+            footAttack.GetComponent<SpriteRenderer>().enabled = false;
+        }
         healthText.text = "Health: " + health;
         energyText.text = "Energy: " + energy;
     }
@@ -61,9 +69,7 @@ public class PlayerInputHandler : MonoBehaviour
                     energy += 1;
                 }
             }
-
             yield return null;
-            
          }
      }
 
@@ -94,7 +100,6 @@ public class PlayerInputHandler : MonoBehaviour
             AudioSource audio = obj.GetComponent<AudioSource>();
             audio.Play();
             energy += 3;
-            int time = 0;
             obj.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(obj.gameObject, audio.clip.length);
 

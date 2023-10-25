@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuHandler : MonoBehaviour
 {
-    public GameObject camera;
+    //public GameObject camera;
     public void PlayGame(){
         SceneManager.LoadScene("SampleScene");
     }

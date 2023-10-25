@@ -8,6 +8,10 @@ public class AIChase : MonoBehaviour
     public float speed;
 
     private float distance;
+
+    void Awake(){
+        speed = 1;
+    }
     // Start is called before the first frame update
     void Start()
     {
