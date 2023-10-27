@@ -30,6 +30,11 @@ public class PlayerAttack : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.V)){
             Collider2D[] tanksToDamage = Physics2D.OverlapCircleAll(footAttackPOS.position, footAttackRange, whatIsTank);
+            Collider2D[] buildingsToDamage = Physics2D.OverlapCircleAll(footAttackPOS.position, footAttackRange, whatIsBuilding);
+            for (int i = 0; i < buildingsToDamage.Length; i++){
+                buildingsToDamage[i].GetComponent<BuildingHandler>().TakeDamage(damage);
+                buildingsToDamage[i].gameObject.GetComponent<AudioSource>().Play();
+            }
             for (int i = 0; i < tanksToDamage.Length; i++){
                     tanksToDamage[i].GetComponent<TankHandler>().TakeDamage(footDamage);
             }

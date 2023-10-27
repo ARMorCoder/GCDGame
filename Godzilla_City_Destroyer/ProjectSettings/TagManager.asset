@@ -11,6 +11,8 @@ TagManager:
   - EnemyMelee
   - energyPoint
   - LandEnemy
+  - healthPoint
+  - armorPoint
   layers:
   - Default
   - TransparentFX
