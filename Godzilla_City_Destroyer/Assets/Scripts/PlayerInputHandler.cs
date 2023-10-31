@@ -18,14 +18,15 @@ public class PlayerInputHandler : MonoBehaviour
    [SerializeField] GameObject footAttack;
    [SerializeField] bool timeActive = false;
    [SerializeField] TimeCountDown timer;
+   [SerializeField] bool IB = false;//invincibility 
 
     void Awake(){
         attack.GetComponent<SpriteRenderer>().enabled = false;
         footAttack.GetComponent<SpriteRenderer>().enabled = false;
         pT = GetComponent<ProjectileThrower>();
         //change later
-        health = 20;
-        energy = 10;
+        health = 100;
+        energy = 40;
 
     }
 
@@ -60,13 +61,21 @@ public class PlayerInputHandler : MonoBehaviour
         if(timeActive){
             Debug.Log("Time is active!");
             if(timer.secondsLeft == 0 && !timer.done){
-                timer.setSeconds(3);
+                timer.setSeconds(20);
+                IB = true;
             }else if(timer.done && timer.secondsLeft == 0){
                 timeActive = false;
+                IB = false;
                 Debug.Log("Time is gone!");
             }
-        }
 
+        }
+        if(IB){
+            body.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        if(!IB){
+            body.GetComponent<SpriteRenderer>().color = Color.white;
+        }
 
         healthText.text = "Health: " + health;
         energyText.text = "Energy: " + energy;
@@ -77,7 +86,7 @@ public class PlayerInputHandler : MonoBehaviour
         IEnumerator RegenerateEnergyRoutine(){
             while(true){
                 yield return new WaitForSeconds(4);
-                if(energy >= 10){
+                if(energy >= 40){
                     Debug.Log("FULL ENERGY!!!");
                 }else{
                     energy += 1;
@@ -106,7 +115,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D obj){
-        if(obj.tag == "EnemyBullet"){
+        if(obj.tag == "EnemyBullet" && !IB){
             Debug.Log("I've been hit!");
             health--;
             Destroy(obj.gameObject);

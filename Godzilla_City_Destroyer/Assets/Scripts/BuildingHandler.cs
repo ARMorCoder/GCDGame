@@ -10,7 +10,7 @@ public class BuildingHandler : MonoBehaviour
     bool belowDamage = false;
 
     void Awake(){
-        health = 50;
+        health = 60;
         damageEffect.SetActive(false);
     }
 

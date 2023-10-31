@@ -18,7 +18,7 @@ public class UFOHandler : MonoBehaviour
     }
 
     void Awake(){
-        health = 10;
+        health = 75;
     }
 
     void Update(){
@@ -45,7 +45,7 @@ public class UFOHandler : MonoBehaviour
      public void OnTriggerEnter2D(Collider2D obj){
         if(obj.tag == "FriendlyBullet"){
             Debug.Log("I've hit an enemy!");
-            health -= 2;
+            health -= 7;
             Destroy(obj.gameObject);
         }
      }
