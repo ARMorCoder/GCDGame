@@ -12,6 +12,8 @@ public class TankHandler : MonoBehaviour
     Vector3 tarPos = new Vector3(0, 0, 0);
     public float t = 0;
     public TotalPoints pointsInfo;
+    bool belowDamage = false;
+    [SerializeField] GameObject damageEffect;
 
     void Start()
     {
@@ -25,9 +27,14 @@ public class TankHandler : MonoBehaviour
     void Update(){
         shootPos = new Vector3(shooter.position.x, shooter.position.y, 0);
         tarPos = new Vector3(target.position.x, target.position.y, 0);
+        if(health <= 10 && belowDamage != true){
+            damageEffect.SetActive(true);
+            belowDamage = true;
+        }
         if(health <= 0){
             pointsHandler.singleton.addPoints(10);
             pointsInfo.points += 10;
+            Destroy(damageEffect.gameObject);
             Destroy(gameObject);
         }
     }

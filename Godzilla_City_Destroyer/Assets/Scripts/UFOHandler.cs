@@ -12,6 +12,8 @@ public class UFOHandler : MonoBehaviour
     Vector3 tarPos = new Vector3(0, 0, 0);
     public float t = 0;
     public TotalPoints pointsInfo;
+    bool belowDamage = false;
+    [SerializeField] GameObject damageEffect;
     void Start()
     {
         bullet.GetComponent<SpriteRenderer>().color = Color.green;
@@ -25,9 +27,14 @@ public class UFOHandler : MonoBehaviour
     void Update(){
         shootPos = new Vector3(shooter.position.x, shooter.position.y, 0);
         tarPos = new Vector3(target.position.x, target.position.y, 0);
+        if(health <= 30 && belowDamage != true){
+            damageEffect.SetActive(true);
+            belowDamage = true;
+        }
         if(health <= 0){
             pointsHandler.singleton.addPoints(25);
             pointsInfo.points += 25;
+            Destroy(damageEffect.gameObject);
             Destroy(gameObject);
         }
     }
