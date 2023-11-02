@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class pointsHandler : MonoBehaviour
 {
   public static pointsHandler singleton;
-     [SerializeField] int points;
+    public int points;
      [SerializeField] Text PointText;
 
     void Awake(){

@@ -53,6 +53,16 @@ MonoBehaviour:
   health: 1
   energy: 0
   body: {fileID: 4276852716431743086}
+  healthText: {fileID: 0}
+  energyText: {fileID: 0}
+  aac: {fileID: 0}
+  attack: {fileID: 0}
+  fac: {fileID: 0}
+  footAttack: {fileID: 0}
+  timeActive: 0
+  timer: {fileID: 0}
+  IB: 0
+  pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
 --- !u!114 &323927817901644278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6057309867310848981, guid: 74e2dd79d5753c446af95de6703cb850, type: 3}
-  temp: {fileID: 0}
   speed: 5
 --- !u!61 &7616117048425276324
 BoxCollider2D:

@@ -178,6 +178,7 @@ MonoBehaviour:
   target: {fileID: 0}
   health: 0
   t: 0
+  pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
 --- !u!114 &5128081516229163605
 MonoBehaviour:
   m_ObjectHideFlags: 0

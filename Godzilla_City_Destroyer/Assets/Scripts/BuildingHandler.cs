@@ -6,8 +6,10 @@ public class BuildingHandler : MonoBehaviour
 {
     [SerializeField] int health;
     [SerializeField] GameObject damageEffect;
-    [SerializeField] pointsHandler points;
+    //[SerializeField] pointsHandler points;
     bool belowDamage = false;
+
+    public TotalPoints pointsInfo;
 
     void Awake(){
         health = 60;
@@ -20,7 +22,8 @@ public class BuildingHandler : MonoBehaviour
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
             CentralGameScript.currentState += 5;
-            points.addPoints(100);
+            pointsHandler.singleton.addPoints(100);
+            pointsInfo.points += 100;
             //Debug.Log("Current state is", )
             Destroy(damageEffect.gameObject);
            // gameObject.GetComponent<SpriteRenderer>().enabled = false;

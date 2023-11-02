@@ -321,7 +321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d275980702fc608408748a134754e5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
 --- !u!4 &245758825
 Transform:
   m_ObjectHideFlags: 0
@@ -820,7 +819,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: testDemo
+          m_StringArgument: Level1_City
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2792649}
@@ -832,7 +831,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: testDemo
+          m_StringArgument: Level1_City
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &672822931
@@ -1112,6 +1111,10 @@ PrefabInstance:
       propertyPath: playerBoss
       value: 
       objectReference: {fileID: 2713002122957515110, guid: 4a8db58eec8fa9343b5010a75fb62c16, type: 3}
+    - target: {fileID: 184645888076840088, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: pointsInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
     - target: {fileID: 430954359645310360, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1204,6 +1207,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3745914092590466886, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: pointsInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
     - target: {fileID: 6110439538240467138, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: m_Name
       value: ScreenSlideCanvas

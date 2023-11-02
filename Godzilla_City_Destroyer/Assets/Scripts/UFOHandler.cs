@@ -11,6 +11,7 @@ public class UFOHandler : MonoBehaviour
     Vector3 shootPos = new Vector3(0,0,0);
     Vector3 tarPos = new Vector3(0, 0, 0);
     public float t = 0;
+    public TotalPoints pointsInfo;
     void Start()
     {
         bullet.GetComponent<SpriteRenderer>().color = Color.green;
@@ -25,6 +26,8 @@ public class UFOHandler : MonoBehaviour
         shootPos = new Vector3(shooter.position.x, shooter.position.y, 0);
         tarPos = new Vector3(target.position.x, target.position.y, 0);
         if(health <= 0){
+            pointsHandler.singleton.addPoints(25);
+            pointsInfo.points += 25;
             Destroy(gameObject);
         }
     }

@@ -11,6 +11,8 @@ public class TankHandler : MonoBehaviour
     Vector3 shootPos = new Vector3(0,0,0);
     Vector3 tarPos = new Vector3(0, 0, 0);
     public float t = 0;
+    public TotalPoints pointsInfo;
+
     void Start()
     {
         SpawnBulletOverTime();
@@ -24,6 +26,8 @@ public class TankHandler : MonoBehaviour
         shootPos = new Vector3(shooter.position.x, shooter.position.y, 0);
         tarPos = new Vector3(target.position.x, target.position.y, 0);
         if(health <= 0){
+            pointsHandler.singleton.addPoints(10);
+            pointsInfo.points += 10;
             Destroy(gameObject);
         }
     }
@@ -45,13 +49,4 @@ public class TankHandler : MonoBehaviour
         health -= damage;
         Debug.Log("damage was taken to tank");
     }
-/*
-     public void OnTriggerEnter2D(Collider2D obj){
-        if(obj.tag == "FriendlyBullet"){
-            Debug.Log("I've hit an enemy!");
-            health -= 2;
-            Destroy(obj.gameObject);
-        }
-     }
-     */
 }

@@ -9,4 +9,8 @@ public class CentralGameScript : MonoBehaviour
 
     public static int bossWinState = 999;
 
+    public static int arrayCheck = 0;
+
+    public static string[] levelNames = {"Level1_Boss", "Level2_City", "Level2_Boss"};
+
 }

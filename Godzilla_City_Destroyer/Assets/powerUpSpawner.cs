@@ -25,7 +25,7 @@ public class powerUpSpawner : MonoBehaviour
                     powerUpPrefab = armorPrefab;
                 }
                 GameObject newPowerUp = Instantiate(powerUpPrefab,new Vector3(Random.Range(-65,40),Random.Range(7,-111),0),Quaternion.identity);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(30);
             }
             yield return null;
         }

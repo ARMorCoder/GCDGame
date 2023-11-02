@@ -20,6 +20,8 @@ public class PlayerInputHandler : MonoBehaviour
    [SerializeField] TimeCountDown timer;
    [SerializeField] bool IB = false;//invincibility 
 
+   public TotalPoints pointsInfo;
+
     void Awake(){
         attack.GetComponent<SpriteRenderer>().enabled = false;
         footAttack.GetComponent<SpriteRenderer>().enabled = false;
@@ -120,15 +122,18 @@ public class PlayerInputHandler : MonoBehaviour
             health--;
             Destroy(obj.gameObject);
         }else if(obj.tag == "energyPoint"){
+            pointsHandler.singleton.addPoints(5);
+            pointsInfo.points += 5;       
             AudioSource audio = obj.GetComponent<AudioSource>();
             obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
             energy += 3;
-            int time = 0;
             obj.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(obj.gameObject, audio.clip.length);
 
         }else if(obj.tag == "armorPoint"){
+            pointsHandler.singleton.addPoints(10);
+            pointsInfo.points += 10;
             AudioSource audio = obj.GetComponent<AudioSource>();
              obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
@@ -139,6 +144,8 @@ public class PlayerInputHandler : MonoBehaviour
             Destroy(obj.gameObject, audio.clip.length);
 
         }else if(obj.tag == "healthPoint"){
+            pointsHandler.singleton.addPoints(5);
+            pointsInfo.points += 5;
             AudioSource audio = obj.GetComponent<AudioSource>();
              obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
