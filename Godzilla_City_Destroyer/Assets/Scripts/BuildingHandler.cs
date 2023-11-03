@@ -11,6 +11,8 @@ public class BuildingHandler : MonoBehaviour
 
     public TotalPoints pointsInfo;
 
+    public CentralGameScript sceneCheck;
+
     void Awake(){
         health = 60;
         damageEffect.SetActive(false);
@@ -21,7 +23,7 @@ public class BuildingHandler : MonoBehaviour
             //damageEffect.SetActive(false);
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
-            CentralGameScript.currentState += 5;
+            sceneCheck.currentState += 5;
             pointsHandler.singleton.addPoints(100);
             pointsInfo.points += 100;
             //Debug.Log("Current state is", )

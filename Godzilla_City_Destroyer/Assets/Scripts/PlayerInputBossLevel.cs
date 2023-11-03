@@ -12,7 +12,6 @@ public class PlayerInputBossLevel : MonoBehaviour
     [SerializeField] Text healthText;
     [SerializeField] Text energyText;
     ProjectileThrowerBossLevel pT;
-
     [SerializeField] bool timeActive = false;
     [SerializeField] TimeCountDown timer;
     [SerializeField] bool IB = false;//invincibility 

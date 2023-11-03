@@ -16,6 +16,7 @@ public class BossHandler : MonoBehaviour
     [SerializeField] GiganAnimateStateChanger gsc;
     [SerializeField] Text healthText;
     int rnd;
+    public CentralGameScript sceneCheck;
 
     void Start(){
         bullet.GetComponent<SpriteRenderer>().color = Color.red;
@@ -44,7 +45,7 @@ public class BossHandler : MonoBehaviour
         }*/
         if(health <= 0){
             //Destroy(gameObject);
-            CentralGameScript.currentState = 999;
+            sceneCheck.currentState = 999;
         }
         healthText.text = "Gigan: " + health;
     }

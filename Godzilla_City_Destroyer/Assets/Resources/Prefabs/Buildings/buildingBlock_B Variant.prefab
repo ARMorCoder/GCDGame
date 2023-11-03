@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: pointsInfo
       value: 
       objectReference: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
+    - target: {fileID: 5744611977886254694, guid: 255a2be5787f1df4b9553013a3292884, type: 3}
+      propertyPath: sceneCheck
+      value: 
+      objectReference: {fileID: 11400000, guid: 95a53b5ff461ea34da7074e76e19be09, type: 2}
     - target: {fileID: 7760551480469637494, guid: 255a2be5787f1df4b9553013a3292884, type: 3}
       propertyPath: m_Name
       value: buildingBlock_B Variant

@@ -175,6 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   damageEffect: {fileID: 2674192717475961787}
+  pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
+  sceneCheck: {fileID: 11400000, guid: 95a53b5ff461ea34da7074e76e19be09, type: 2}
 --- !u!82 &4494892141140096709
 AudioSource:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4699886321580687794}
   - component: {fileID: 5410988197519911237}
   - component: {fileID: 6809010121615059341}
+  - component: {fileID: -3638678094213243599}
   m_Layer: 0
   m_Name: PlayerGodzilla(BossVersion)
   m_TagString: Untagged
@@ -145,6 +146,20 @@ MonoBehaviour:
   speed: 10
   animationStateChanger: {fileID: 7396633463038896701}
   body: {fileID: 0}
+--- !u!114 &-3638678094213243599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562611945107531249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a440231822e13d44195d3b8dd815d9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6057309867310848981, guid: 74e2dd79d5753c446af95de6703cb850, type: 3}
+  speed: 5
 --- !u!1 &3787051990137918253
 GameObject:
   m_ObjectHideFlags: 0

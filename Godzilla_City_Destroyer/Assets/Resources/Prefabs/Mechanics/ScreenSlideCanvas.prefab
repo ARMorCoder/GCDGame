@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2555272440300164001}
   - component: {fileID: 2431077619114297812}
   - component: {fileID: 5072256229818263452}
-  - component: {fileID: 184645888076840088}
   m_Layer: 5
   m_Name: Top Cover
   m_TagString: Untagged
@@ -76,25 +75,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &184645888076840088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430954359645310360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e0cbec5010bca4f9bcf22a49a0e066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outTransform: {fileID: 39178606300236333}
-  inTransform: {fileID: 6998226357444684370}
-  winState: {fileID: 5030993089949010397}
-  loseState: {fileID: 6481200235078707655}
-  player: {fileID: 0}
-  playerBoss: {fileID: 0}
-  slideTime: 2
 --- !u!1 &1240730720850835897
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +497,7 @@ GameObject:
   - component: {fileID: 3689182779453239221}
   - component: {fileID: 1106497621527025407}
   - component: {fileID: 5519755799956583238}
+  - component: {fileID: 1442126819934144401}
   m_Layer: 5
   m_Name: ScreenSlideCanvas
   m_TagString: Untagged
@@ -613,6 +594,31 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1442126819934144401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110439538240467138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e0cbec5010bca4f9bcf22a49a0e066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topCover: {fileID: 2555272440300164001}
+  bottomCover: {fileID: 7022876768596443165}
+  bottomOutTransform: {fileID: 500358594232907655}
+  topOutTransform: {fileID: 39178606300236333}
+  inTransform: {fileID: 6998226357444684370}
+  winState: {fileID: 5030993089949010397}
+  loseState: {fileID: 6481200235078707655}
+  player: {fileID: 7728678546875992359, guid: 5ac6f6f8869985c42a3012e4124a401a, type: 3}
+  playerBoss: {fileID: 47754527849115542, guid: 986e0589c756ea2459c85533c229ea7a, type: 3}
+  slideTime: 2
+  pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
+  level: 
+  sceneCheck: {fileID: 11400000, guid: 95a53b5ff461ea34da7074e76e19be09, type: 2}
 --- !u!1 &6481200235078707655
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +706,6 @@ GameObject:
   - component: {fileID: 7022876768596443165}
   - component: {fileID: 4495937587901162520}
   - component: {fileID: 4080335748593349791}
-  - component: {fileID: 3745914092590466886}
   m_Layer: 5
   m_Name: ButtomCover
   m_TagString: Untagged
@@ -765,25 +770,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3745914092590466886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6940445927259050263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e0cbec5010bca4f9bcf22a49a0e066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outTransform: {fileID: 500358594232907655}
-  inTransform: {fileID: 6998226357444684370}
-  winState: {fileID: 5030993089949010397}
-  loseState: {fileID: 6481200235078707655}
-  player: {fileID: 7728678546875992359, guid: 5ac6f6f8869985c42a3012e4124a401a, type: 3}
-  playerBoss: {fileID: 2713002122957515110, guid: 4a8db58eec8fa9343b5010a75fb62c16, type: 3}
-  slideTime: 2
 --- !u!1 &8905889215923121458
 GameObject:
   m_ObjectHideFlags: 0
