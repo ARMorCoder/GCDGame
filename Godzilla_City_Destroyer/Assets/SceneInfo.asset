@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75560a4e63e9dbf45b13880b05b48bd4, type: 3}
   m_Name: SceneInfo
   m_EditorClassIdentifier: 
+  winState: 255
+  currentState: 0
+  bossWinState: 999
+  arrayCheck: 0
+  levelNames:
+  - Level1_Boss
+  - Level2_City
+  - Level2_Boss
+  - TitleScreen
