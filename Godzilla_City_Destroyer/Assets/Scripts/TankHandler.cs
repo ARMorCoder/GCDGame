@@ -54,6 +54,7 @@ public class TankHandler : MonoBehaviour
 
     public void TakeDamage(int damage){
         health -= damage;
+        GetComponent<AudioSource>().Play();
         Debug.Log("damage was taken to tank");
     }
 }

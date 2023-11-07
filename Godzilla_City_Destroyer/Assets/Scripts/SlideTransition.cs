@@ -39,6 +39,7 @@ public class SlideTransition : MonoBehaviour
     }
 
     void Update(){
+        Scene scene = SceneManager.GetActiveScene();
         if(sceneCheck.currentState == sceneCheck.winState){
             winState.SetActive(true);
             Debug.Log("You win!!");
@@ -56,7 +57,11 @@ public class SlideTransition : MonoBehaviour
             winState.SetActive(true);
             Debug.Log("You win!!");
             sceneCheck.currentState = 0;
-            level = sceneCheck.levelNames[sceneCheck.arrayCheck];
+            if(scene.name =="Level2_Boss"){
+                level = "EndScene";
+            }else{
+                level = sceneCheck.levelNames[sceneCheck.arrayCheck];
+            }
             SlideIn(level);
             //SlideIn("TitleScreen");
         }

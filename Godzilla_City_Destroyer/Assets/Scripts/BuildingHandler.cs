@@ -6,6 +6,7 @@ public class BuildingHandler : MonoBehaviour
 {
     [SerializeField] int health;
     [SerializeField] GameObject damageEffect;
+    [SerializeField] Sprite damage;
     //[SerializeField] pointsHandler points;
     bool belowDamage = false;
 
@@ -32,6 +33,7 @@ public class BuildingHandler : MonoBehaviour
             Destroy(gameObject);
         }
         if(health <= 15 && belowDamage != true){
+            GetComponent<SpriteRenderer>().sprite = damage;
             damageEffect.SetActive(true);
             belowDamage = true;
         }

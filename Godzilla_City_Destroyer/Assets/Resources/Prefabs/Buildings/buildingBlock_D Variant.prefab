@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -433515089, guid: 450ed9330db7334489f992db46a524fe, type: 3}
+    - target: {fileID: 4494892141140096709, guid: 255a2be5787f1df4b9553013a3292884, type: 3}
+      propertyPath: m_Volume
+      value: 0.088
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744611977886254694, guid: 255a2be5787f1df4b9553013a3292884, type: 3}
+      propertyPath: damage
+      value: 
+      objectReference: {fileID: -814814053, guid: 450ed9330db7334489f992db46a524fe, type: 3}
     - target: {fileID: 5744611977886254694, guid: 255a2be5787f1df4b9553013a3292884, type: 3}
       propertyPath: pointsInfo
       value: 

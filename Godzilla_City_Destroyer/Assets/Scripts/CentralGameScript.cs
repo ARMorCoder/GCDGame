@@ -12,6 +12,6 @@ public class CentralGameScript : ScriptableObject
 
     public int arrayCheck = -1;
 
-    public string[] levelNames = {"Level1_Boss", "Level2_City", "Level2_Boss", "TitleScreen"};
+    public string[] levelNames = {"Level1_Boss", "Level2_City", "Level2_Boss", "EndScene"};
 
 }

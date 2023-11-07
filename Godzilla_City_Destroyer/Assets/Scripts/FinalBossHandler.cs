@@ -18,6 +18,9 @@ public class FinalBossHandler : MonoBehaviour
 
     public CentralGameScript sceneCheck;
 
+    public AudioSource hurtAudio;
+    public AudioSource attackAudio;
+
     void Start(){
         leftAttack.SetActive(false);
         rightAttack.SetActive(false);
@@ -66,14 +69,14 @@ public class FinalBossHandler : MonoBehaviour
                     if(rnd % 2 == 0){
                         gsc.ChangeAnimationState("GhidorahLeftAttack");
                         leftAttack.SetActive(true);
-                        GetComponent<AudioSource>().Play();
+                        attackAudio.Play();
                         yield return new WaitForSeconds(2);
                         leftAttack.SetActive(false);
                         gsc.ChangeAnimationState("GhidorahIdle");
                     }else{
                         gsc.ChangeAnimationState("GhidorahRightAttack");
                         rightAttack.SetActive(true);
-                        GetComponent<AudioSource>().Play();
+                        attackAudio.Play();
                         yield return new WaitForSeconds(2);
                         rightAttack.SetActive(false);
                         gsc.ChangeAnimationState("GhidorahIdle");
@@ -86,6 +89,7 @@ public class FinalBossHandler : MonoBehaviour
      void OnTriggerEnter2D(Collider2D obj){
         if(obj.tag == "FriendlyBullet"){
             health--;
+            hurtAudio.Play();
             //obj.GetComponent<AudioSource>().Play();
             Destroy(obj.gameObject);
         }

@@ -55,6 +55,7 @@ public class UFOHandler : MonoBehaviour
      public void OnTriggerEnter2D(Collider2D obj){
         if(obj.tag == "FriendlyBullet"){
             Debug.Log("I've hit an enemy!");
+            GetComponent<AudioSource>().Play();
             health -= 7;
             Destroy(obj.gameObject);
         }

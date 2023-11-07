@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   damageEffect: {fileID: 7734901297897119416}
+  damage: {fileID: -1882454110, guid: 48d616336179cd7468ab66e1e58738c9, type: 3}
   pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
   sceneCheck: {fileID: 11400000, guid: 95a53b5ff461ea34da7074e76e19be09, type: 2}
 --- !u!82 &7464297732669797434
@@ -189,7 +190,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4268629608165725008, guid: ad61aaf067726db40941f356eb0a9669, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6f581ed0014960d4189880d211be2323, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.409
+  m_Volume: 0.088
   m_Pitch: 1.97
   Loop: 0
   Mute: 0

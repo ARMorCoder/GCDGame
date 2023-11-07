@@ -15,7 +15,7 @@ MonoBehaviour:
   winState: 255
   currentState: 0
   bossWinState: 999
-  arrayCheck: 0
+  arrayCheck: 4
   levelNames:
   - Level1_Boss
   - Level2_City
