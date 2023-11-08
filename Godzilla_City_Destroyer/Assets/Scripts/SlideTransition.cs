@@ -103,6 +103,9 @@ public class SlideTransition : MonoBehaviour
 
     public string CheckLevel(Scene currentScene){
         switch(currentScene.name){
+            case "TutorialScene":
+                return "Level1_City";
+                break;
             case "Level1_City":
                 return "Level1_Boss";
                 break;

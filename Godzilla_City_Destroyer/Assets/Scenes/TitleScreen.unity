@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 313045919}
   - component: {fileID: 313045918}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1204,7 +1204,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level1_CIty
+          m_StringArgument: TutorialScene
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 467094274}

@@ -473,7 +473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3689182779453239221, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3745914092590466886, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: sceneCheck
@@ -2052,6 +2052,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 443564989}
+    - target: {fileID: 3681189002857350602, guid: 0453e4fd3c2b49a45ae10258271ebabc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4608547198412204251, guid: 0453e4fd3c2b49a45ae10258271ebabc, type: 3}
       propertyPath: m_Color.b
       value: 0.35182676
@@ -2094,15 +2098,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6446745517381885994, guid: 0453e4fd3c2b49a45ae10258271ebabc, type: 3}
       propertyPath: m_Color.b
-      value: 0.39088646
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6446745517381885994, guid: 0453e4fd3c2b49a45ae10258271ebabc, type: 3}
       propertyPath: m_Color.g
-      value: 0.39088646
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6446745517381885994, guid: 0453e4fd3c2b49a45ae10258271ebabc, type: 3}
       propertyPath: m_Color.r
-      value: 0.4528302
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7348286836823715630, guid: 0453e4fd3c2b49a45ae10258271ebabc, type: 3}
       propertyPath: m_Pivot.x

@@ -312,6 +312,9 @@ MonoBehaviour:
     m_Bits: 128
   footAttackPOS: {fileID: 9034611115241686470}
   footAttackRange: 1.86
+  whatIsTutBuilding:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &4653076302715264517
 GameObject:
   m_ObjectHideFlags: 0
