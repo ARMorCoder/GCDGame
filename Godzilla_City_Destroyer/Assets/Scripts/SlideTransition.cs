@@ -43,8 +43,10 @@ public class SlideTransition : MonoBehaviour
         if(sceneCheck.currentState == sceneCheck.winState){
             winState.SetActive(true);
             Debug.Log("You win!!");
+            /*
             sceneCheck.currentState = 0;
-            level = sceneCheck.levelNames[sceneCheck.arrayCheck];
+            level = sceneCheck.levelNames[sceneCheck.arrayCheck];*/
+            level = CheckLevel(scene);
             SlideIn(level);
         }
         else if(player.health <= 0 || playerBoss.health <= 0){
@@ -57,11 +59,13 @@ public class SlideTransition : MonoBehaviour
             winState.SetActive(true);
             Debug.Log("You win!!");
             sceneCheck.currentState = 0;
+            /*
             if(scene.name =="Level2_Boss"){
                 level = "EndScene";
             }else{
                 level = sceneCheck.levelNames[sceneCheck.arrayCheck];
-            }
+            }*/
+            level = CheckLevel(scene);
             SlideIn(level);
             //SlideIn("TitleScreen");
         }
@@ -93,6 +97,26 @@ public class SlideTransition : MonoBehaviour
             }
             yield return null;
             SceneManager.LoadScene(sceneName);
+        }
+    }
+
+
+    public string CheckLevel(Scene currentScene){
+        switch(currentScene.name){
+            case "Level1_City":
+                return "Level1_Boss";
+                break;
+            case "Level1_Boss":
+                return "Level2_City";
+                break;
+            case "Level2_City":
+                return "Level2_Boss";
+                break;
+            case "Level2_Boss":
+                return "EndScene";
+                break;
+            default:
+                return "TitleScreen";
         }
     }
 
