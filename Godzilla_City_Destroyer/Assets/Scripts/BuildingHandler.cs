@@ -7,12 +7,13 @@ public class BuildingHandler : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] GameObject damageEffect;
     [SerializeField] Sprite damage;
-    //[SerializeField] pointsHandler points;
     bool belowDamage = false;
 
     public TotalPoints pointsInfo;
 
     public CentralGameScript sceneCheck;
+
+    public BuildingCounter bC;
 
     void Awake(){
         health = 60;
@@ -21,15 +22,13 @@ public class BuildingHandler : MonoBehaviour
 
     void Update(){
         if(health <= 0){
-            //damageEffect.SetActive(false);
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
             sceneCheck.currentState += 5;
+            bC.counter -= 1;
             pointsHandler.singleton.addPoints(100);
             pointsInfo.points += 100;
-            //Debug.Log("Current state is", )
             Destroy(damageEffect.gameObject);
-           // gameObject.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject);
         }
         if(health <= 15 && belowDamage != true){

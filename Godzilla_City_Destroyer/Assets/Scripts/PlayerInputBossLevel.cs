@@ -16,6 +16,7 @@ public class PlayerInputBossLevel : MonoBehaviour
     [SerializeField] TimeCountDown timer;
     [SerializeField] bool IB = false;//invincibility 
     public TotalPoints pointsInfo;
+    [SerializeField] int time;
 
     void Awake(){
         pT = GetComponent<ProjectileThrowerBossLevel>();
@@ -42,7 +43,7 @@ public class PlayerInputBossLevel : MonoBehaviour
         if(timeActive){
             Debug.Log("Time is active!");
             if(timer.secondsLeft == 0 && !timer.done){
-                timer.setSeconds(20);
+                timer.setSeconds(time);
                 IB = true;
             }else if(timer.done && timer.secondsLeft == 0){
                 timeActive = false;
@@ -99,6 +100,7 @@ public class PlayerInputBossLevel : MonoBehaviour
         public void OnTriggerEnter2D(Collider2D obj){
         if(obj.tag == "EnemyBullet" && !IB){
             Debug.Log("I've been hit!");
+           GetComponent<AudioSource>().Play();
             health--;
             Destroy(obj.gameObject);
         }else if(obj.tag == "EnemyMelee" && !IB){
@@ -110,7 +112,7 @@ public class PlayerInputBossLevel : MonoBehaviour
             AudioSource audio = obj.GetComponent<AudioSource>();
             obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
-            energy += 3;
+            energy += obj.GetComponent<energyPowerScript>().amount;
             obj.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(obj.gameObject, audio.clip.length);
 
@@ -120,7 +122,7 @@ public class PlayerInputBossLevel : MonoBehaviour
             AudioSource audio = obj.GetComponent<AudioSource>();
              obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
-            //energy += 3;
+            time = obj.GetComponent<energyPowerScript>().amount;
             timeActive = true;
             timer.done = false;
             obj.GetComponent<SpriteRenderer>().enabled = false;
@@ -132,7 +134,7 @@ public class PlayerInputBossLevel : MonoBehaviour
             AudioSource audio = obj.GetComponent<AudioSource>();
              obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
-            health += 1;
+            health += obj.GetComponent<energyPowerScript>().amount;
             obj.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(obj.gameObject, audio.clip.length);
 

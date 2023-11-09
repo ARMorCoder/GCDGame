@@ -150,15 +150,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3088559175751873651, guid: ad61aaf067726db40941f356eb0a9669, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a78479405fd75ab4fbfb1b5a600c70a5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5fad4c90b2005854f9cb221340ad6527, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.409
-  m_Pitch: 0.69
-  Loop: 0
+  m_Volume: 0.53
+  m_Pitch: 1
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 131
+  Priority: 150
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1944,6 +1944,7 @@ MonoBehaviour:
   sceneCheck: {fileID: 11400000, guid: 95a53b5ff461ea34da7074e76e19be09, type: 2}
   hurtAudio: {fileID: 2074586384}
   attackAudio: {fileID: 1475334308}
+  time: 0
 --- !u!82 &1475334308
 AudioSource:
   m_ObjectHideFlags: 0

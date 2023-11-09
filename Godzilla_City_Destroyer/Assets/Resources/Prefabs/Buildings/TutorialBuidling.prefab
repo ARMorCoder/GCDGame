@@ -21,6 +21,10 @@ PrefabInstance:
       value: 0.088
       objectReference: {fileID: 0}
     - target: {fileID: 5744611977886254694, guid: 255a2be5787f1df4b9553013a3292884, type: 3}
+      propertyPath: bC
+      value: 
+      objectReference: {fileID: 11400000, guid: afcc57c436c8e2f44b6a5e241524b995, type: 2}
+    - target: {fileID: 5744611977886254694, guid: 255a2be5787f1df4b9553013a3292884, type: 3}
       propertyPath: damage
       value: 
       objectReference: {fileID: 1592768375, guid: 450ed9330db7334489f992db46a524fe, type: 3}
@@ -114,6 +118,7 @@ MonoBehaviour:
   damage: {fileID: 1592768375, guid: 450ed9330db7334489f992db46a524fe, type: 3}
   pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
   sceneCheck: {fileID: 11400000, guid: 95a53b5ff461ea34da7074e76e19be09, type: 2}
+  bC: {fileID: 0}
 --- !u!1 &7727912700885958936 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2674192717475961787, guid: 255a2be5787f1df4b9553013a3292884, type: 3}

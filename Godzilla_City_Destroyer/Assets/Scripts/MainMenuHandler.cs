@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuHandler : MonoBehaviour
 {
-    //public GameObject camera;
-    public void PlayGame(){
-        SceneManager.LoadScene("SampleScene");
+    public void Options(){
+        SceneManager.LoadScene("OptionsScene");
+    }
+
+    public void Title(){
+        Debug.Log("Testing");
+        SceneManager.LoadScene("TitleScreen");
     }
 
     public void QuitGame(){

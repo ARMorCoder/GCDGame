@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5394665349647782455}
   - component: {fileID: 5737188814138441528}
   - component: {fileID: 8932448873896990543}
+  - component: {fileID: 1150020258829648325}
   m_Layer: 0
   m_Name: energyPoint
   m_TagString: energyPoint
@@ -245,3 +246,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1150020258829648325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314734879559116377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86dcdc9b34e23441b851565c76d15db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

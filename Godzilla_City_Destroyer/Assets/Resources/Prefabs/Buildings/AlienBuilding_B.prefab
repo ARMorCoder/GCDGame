@@ -178,6 +178,7 @@ MonoBehaviour:
   damage: {fileID: -1464842532, guid: 48d616336179cd7468ab66e1e58738c9, type: 3}
   pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
   sceneCheck: {fileID: 11400000, guid: 95a53b5ff461ea34da7074e76e19be09, type: 2}
+  bC: {fileID: 11400000, guid: afcc57c436c8e2f44b6a5e241524b995, type: 2}
 --- !u!82 &1959244626280206926
 AudioSource:
   m_ObjectHideFlags: 0

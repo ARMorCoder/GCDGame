@@ -16,13 +16,16 @@ public class SlideTransition : MonoBehaviour
     [SerializeField] GameObject loseState;
     [SerializeField] PlayerInputHandler player;
     [SerializeField] PlayerInputBossLevel playerBoss;
-    [SerializeField] float slideTime = 2f;
+    [SerializeField] float slideTime = 3f;
     public TotalPoints pointsInfo;
     public string level;
     public CentralGameScript sceneCheck;
 
+    public BuildingCounter bC;
+
     void Awake(){
         Scene scene = SceneManager.GetActiveScene();
+        bC.counter = CheckLevelBC(scene);
         if(scene.name == "TitleScreen"){
             pointsInfo.points = 0;
             sceneCheck.arrayCheck = -1;
@@ -40,12 +43,9 @@ public class SlideTransition : MonoBehaviour
 
     void Update(){
         Scene scene = SceneManager.GetActiveScene();
-        if(sceneCheck.currentState == sceneCheck.winState){
+        if(bC.counter == 0){
             winState.SetActive(true);
             Debug.Log("You win!!");
-            /*
-            sceneCheck.currentState = 0;
-            level = sceneCheck.levelNames[sceneCheck.arrayCheck];*/
             level = CheckLevel(scene);
             SlideIn(level);
         }
@@ -53,21 +53,14 @@ public class SlideTransition : MonoBehaviour
             loseState.SetActive(true);
             sceneCheck.currentState = 0;
             sceneCheck.arrayCheck = 0;
-            SlideIn("TitleScreen");
+            SlideIn("GameOverScene");
         }
         else if(sceneCheck.currentState == sceneCheck.bossWinState){
             winState.SetActive(true);
             Debug.Log("You win!!");
             sceneCheck.currentState = 0;
-            /*
-            if(scene.name =="Level2_Boss"){
-                level = "EndScene";
-            }else{
-                level = sceneCheck.levelNames[sceneCheck.arrayCheck];
-            }*/
             level = CheckLevel(scene);
             SlideIn(level);
-            //SlideIn("TitleScreen");
         }
     }
 
@@ -120,6 +113,22 @@ public class SlideTransition : MonoBehaviour
                 break;
             default:
                 return "TitleScreen";
+        }
+    }
+
+    public int CheckLevelBC(Scene currentScene){
+        switch(currentScene.name){
+            case "TutorialScene":
+                return 1;
+                break;
+            case "Level1_City":
+                return 51;
+                break;
+            case "Level2_City":
+                return 51;
+                break;
+            default:
+                return 1;
         }
     }
 

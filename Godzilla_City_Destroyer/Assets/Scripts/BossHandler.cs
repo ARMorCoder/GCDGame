@@ -20,8 +20,10 @@ public class BossHandler : MonoBehaviour
 
     public AudioSource hurtAudio;
     public AudioSource attackAudio;
+    [SerializeField] float time;
 
     void Start(){
+        time = 1.0f;
         bullet.GetComponent<SpriteRenderer>().color = Color.red;
         leftAttack.SetActive(false);
         rightAttack.SetActive(false);
@@ -38,14 +40,9 @@ public class BossHandler : MonoBehaviour
     void Update(){
         shootPos = new Vector3(head.position.x, head.position.y, 0);
         tarPos = new Vector3(target.position.x, target.position.y, 0);
-        /*rnd = Random.Range(0,1);
-        if(rnd == 0 && transform.position != pos1.position){
-            transform.position = Vector3.Lerp(transform.position, pos1.position, t);
-            t += Time.deltaTime * 0.001f;
-        }else if(rnd == 1 && transform.position != pos2.position){
-            transform.position = Vector3.Lerp(transform.position, pos2.position, t);
-            t += Time.deltaTime * 0.001f;
-        }*/
+        if(health <= 25){
+            time = 0.5f;
+        }
         if(health <= 0){
             //Destroy(gameObject);
             sceneCheck.currentState = 999;
@@ -57,7 +54,7 @@ public class BossHandler : MonoBehaviour
         StartCoroutine(SpawnBulletOverTimeRoutine());
         IEnumerator SpawnBulletOverTimeRoutine(){
             while(true){
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(time);
                 Rigidbody2D newBullet = Instantiate(bullet,transform.position,Quaternion.identity).GetComponent<Rigidbody2D>();
                 tarPos.z = 0;
                 newBullet.velocity = (tarPos - transform.position);
@@ -79,14 +76,12 @@ public class BossHandler : MonoBehaviour
                         gsc.ChangeAnimationState("GiganLeftAttack");
                         leftAttack.SetActive(true);
                         attackAudio.Play();
-                        //GetComponent<AudioSource>().Play();
                         yield return new WaitForSeconds(2);
                         leftAttack.SetActive(false);
                         gsc.ChangeAnimationState("GiganIdle");
                     }else{
                         gsc.ChangeAnimationState("GiganRightAttack");
                         rightAttack.SetActive(true);
-                        //GetComponent<AudioSource>().Play();
                         attackAudio.Play();
                         yield return new WaitForSeconds(2);
                         rightAttack.SetActive(false);
@@ -101,7 +96,6 @@ public class BossHandler : MonoBehaviour
         if(obj.tag == "FriendlyBullet"){
             health--;
             hurtAudio.Play();
-            //obj.GetComponent<AudioSource>().Play();
             Destroy(obj.gameObject);
         }
      }

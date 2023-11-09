@@ -21,7 +21,10 @@ public class FinalBossHandler : MonoBehaviour
     public AudioSource hurtAudio;
     public AudioSource attackAudio;
 
+    [SerializeField] float time;
+
     void Start(){
+        time = 1.0f;
         leftAttack.SetActive(false);
         rightAttack.SetActive(false);
         healthText.text = "King Ghidorah: " + health;
@@ -37,8 +40,10 @@ public class FinalBossHandler : MonoBehaviour
     void Update(){
         shootPos = new Vector3(head.position.x, head.position.y, 0);
         tarPos = new Vector3(target.position.x, target.position.y, 0);
+        if(health <= 25){
+            time = 0.5f;
+        }
         if(health <= 0){
-            //Destroy(gameObject);
             sceneCheck.currentState = 999;
         }
         healthText.text = "King Ghidorah: " + health;
@@ -48,7 +53,7 @@ public class FinalBossHandler : MonoBehaviour
         StartCoroutine(SpawnBulletOverTimeRoutine());
         IEnumerator SpawnBulletOverTimeRoutine(){
             while(true){
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(time);
                 Rigidbody2D newBullet = Instantiate(bullet,transform.position,Quaternion.identity).GetComponent<Rigidbody2D>();
                 tarPos.z = 0;
                 newBullet.velocity = (tarPos - transform.position);
@@ -90,7 +95,6 @@ public class FinalBossHandler : MonoBehaviour
         if(obj.tag == "FriendlyBullet"){
             health--;
             hurtAudio.Play();
-            //obj.GetComponent<AudioSource>().Play();
             Destroy(obj.gameObject);
         }
      }

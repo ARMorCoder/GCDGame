@@ -619,6 +619,7 @@ MonoBehaviour:
   pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
   level: 
   sceneCheck: {fileID: 11400000, guid: 95a53b5ff461ea34da7074e76e19be09, type: 2}
+  bC: {fileID: 11400000, guid: afcc57c436c8e2f44b6a5e241524b995, type: 2}
 --- !u!1 &6481200235078707655
 GameObject:
   m_ObjectHideFlags: 0

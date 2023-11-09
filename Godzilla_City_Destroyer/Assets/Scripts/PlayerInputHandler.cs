@@ -19,6 +19,7 @@ public class PlayerInputHandler : MonoBehaviour
    [SerializeField] bool timeActive = false;
    [SerializeField] TimeCountDown timer;
    [SerializeField] bool IB = false;//invincibility 
+   [SerializeField] int time;
 
    public TotalPoints pointsInfo;
 
@@ -26,7 +27,6 @@ public class PlayerInputHandler : MonoBehaviour
         attack.GetComponent<SpriteRenderer>().enabled = false;
         footAttack.GetComponent<SpriteRenderer>().enabled = false;
         pT = GetComponent<ProjectileThrower>();
-        //change later
         health = 100;
         energy = 40;
 
@@ -63,7 +63,7 @@ public class PlayerInputHandler : MonoBehaviour
         if(timeActive){
             Debug.Log("Time is active!");
             if(timer.secondsLeft == 0 && !timer.done){
-                timer.setSeconds(20);
+                timer.setSeconds(time);
                 IB = true;
             }else if(timer.done && timer.secondsLeft == 0){
                 timeActive = false;
@@ -119,6 +119,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D obj){
         if(obj.tag == "EnemyBullet" && !IB){
             Debug.Log("I've been hit!");
+            GetComponent<AudioSource>().Play();
             health--;
             Destroy(obj.gameObject);
         }else if(obj.tag == "energyPoint"){
@@ -127,7 +128,7 @@ public class PlayerInputHandler : MonoBehaviour
             AudioSource audio = obj.GetComponent<AudioSource>();
             obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
-            energy += 3;
+            energy += obj.GetComponent<energyPowerScript>().amount;
             obj.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(obj.gameObject, audio.clip.length);
 
@@ -137,7 +138,7 @@ public class PlayerInputHandler : MonoBehaviour
             AudioSource audio = obj.GetComponent<AudioSource>();
              obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
-            //energy += 3;
+            time = obj.GetComponent<energyPowerScript>().amount;
             timeActive = true;
             timer.done = false;
             obj.GetComponent<SpriteRenderer>().enabled = false;
@@ -149,7 +150,7 @@ public class PlayerInputHandler : MonoBehaviour
             AudioSource audio = obj.GetComponent<AudioSource>();
              obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
-            health += 1;
+            health += obj.GetComponent<energyPowerScript>().amount;
             obj.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(obj.gameObject, audio.clip.length);
 
