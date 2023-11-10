@@ -10,7 +10,8 @@ public class MainMenuHandler : MonoBehaviour
     }
 
     public void Title(){
-        Debug.Log("Testing");
+        Time.timeScale = 1f;
+        PauseMenu.gamePause = false;
         SceneManager.LoadScene("TitleScreen");
     }
 

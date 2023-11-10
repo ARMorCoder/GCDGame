@@ -39,48 +39,51 @@ public class PlayerInputHandler : MonoBehaviour
         RegenerateEnergy();
     }
     void Update(){
-        if(Input.GetKeyDown(KeyCode.F)){
-            if(energy <= 0){
-                Debug.Log("out of energy!!");
-             }else{ 
-                pT.Throw(Camera.main.ScreenToWorldPoint(Input.mousePosition)
-                );
-                energy -= 1;
-             }
-        }
-        if(Input.GetKeyDown(KeyCode.Space)){
-           attack.GetComponent<SpriteRenderer>().enabled = true;
-        }
-        if(Input.GetKeyUp(KeyCode.Space)){
-           attack.GetComponent<SpriteRenderer>().enabled = false;
-        }
-        if(Input.GetKeyDown(KeyCode.V)){
-            footAttack.GetComponent<SpriteRenderer>().enabled = true;
-        }if(Input.GetKeyUp(KeyCode.V)){
-            footAttack.GetComponent<SpriteRenderer>().enabled = false;
-        }
-
-        if(timeActive){
-            Debug.Log("Time is active!");
-            if(timer.secondsLeft == 0 && !timer.done){
-                timer.setSeconds(time);
-                IB = true;
-            }else if(timer.done && timer.secondsLeft == 0){
-                timeActive = false;
-                IB = false;
-                Debug.Log("Time is gone!");
+        if(!PauseMenu.gamePause){
+    
+            if(Input.GetKeyDown(KeyCode.F)){
+                if(energy <= 0){
+                    Debug.Log("out of energy!!");
+                }else{ 
+                    pT.Throw(Camera.main.ScreenToWorldPoint(Input.mousePosition)
+                    );
+                    energy -= 1;
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Space)){
+            attack.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            if(Input.GetKeyUp(KeyCode.Space)){
+            attack.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            if(Input.GetKeyDown(KeyCode.V)){
+                footAttack.GetComponent<SpriteRenderer>().enabled = true;
+            }if(Input.GetKeyUp(KeyCode.V)){
+                footAttack.GetComponent<SpriteRenderer>().enabled = false;
             }
 
-        }
-        if(IB){
-            body.GetComponent<SpriteRenderer>().color = Color.red;
-        }
-        if(!IB){
-            body.GetComponent<SpriteRenderer>().color = Color.white;
-        }
+            if(timeActive){
+                Debug.Log("Time is active!");
+                if(timer.secondsLeft == 0 && !timer.done){
+                    timer.setSeconds(time);
+                    IB = true;
+                }else if(timer.done && timer.secondsLeft == 0){
+                    timeActive = false;
+                    IB = false;
+                    Debug.Log("Time is gone!");
+                }
 
-        healthText.text = "Health: " + health;
-        energyText.text = "Energy: " + energy;
+            }
+            if(IB){
+                body.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            if(!IB){
+                body.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+
+            healthText.text = "Health: " + health;
+            energyText.text = "Energy: " + energy;
+        }
     }
 
     void RegenerateEnergy(){

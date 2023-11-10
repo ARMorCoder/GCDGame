@@ -32,34 +32,36 @@ public class PlayerInputBossLevel : MonoBehaviour
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.F)){
-            if(energy <= 0){
-                Debug.Log("out of energy!!");
-             }else{ 
-                pT.Throw();
-                energy -= 1;
-             }
-        }
-        if(timeActive){
-            Debug.Log("Time is active!");
-            if(timer.secondsLeft == 0 && !timer.done){
-                timer.setSeconds(time);
-                IB = true;
-            }else if(timer.done && timer.secondsLeft == 0){
-                timeActive = false;
-                IB = false;
-                Debug.Log("Time is gone!");
+        if(!PauseMenu.gamePause){
+            if(Input.GetKeyDown(KeyCode.F)){
+                if(energy <= 0){
+                    Debug.Log("out of energy!!");
+                }else{ 
+                    pT.Throw();
+                    energy -= 1;
+                }
             }
+            if(timeActive){
+                Debug.Log("Time is active!");
+                if(timer.secondsLeft == 0 && !timer.done){
+                    timer.setSeconds(time);
+                    IB = true;
+                }else if(timer.done && timer.secondsLeft == 0){
+                    timeActive = false;
+                    IB = false;
+                    Debug.Log("Time is gone!");
+                }
 
+            }
+            if(IB){
+                body.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            if(!IB){
+                body.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            healthText.text = "Health: " + health;
+            energyText.text = "Energy: " + energy;
         }
-        if(IB){
-            body.GetComponent<SpriteRenderer>().color = Color.red;
-        }
-        if(!IB){
-            body.GetComponent<SpriteRenderer>().color = Color.white;
-        }
-        healthText.text = "Health: " + health;
-        energyText.text = "Energy: " + energy;
     }
     void RegenerateEnergy(){
         StartCoroutine(RegenerateEnergyRoutine());
