@@ -109,6 +109,12 @@ public class SlideTransition : MonoBehaviour
                 return "Level2_Boss";
                 break;
             case "Level2_Boss":
+                return "Level3_City";
+                break;
+            case "Level3_City":
+                return "Level3_Boss";
+                break;
+            case "Level3_Boss":
                 return "EndScene";
                 break;
             default:
@@ -125,6 +131,9 @@ public class SlideTransition : MonoBehaviour
                 return 51;
                 break;
             case "Level2_City":
+                return 1;
+                break;
+            case "Level3_City":
                 return 51;
                 break;
             default:

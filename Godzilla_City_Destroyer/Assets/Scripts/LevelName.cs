@@ -32,7 +32,13 @@ public class LevelName : MonoBehaviour
                 return "Level 2";
                 break;
             case "Level2_Boss":
-                return "Level 2: Ghidorah";
+                return "Level 2: Megalon";
+                break;
+            case "Level3_City":
+                return "Level 3";
+                break;
+            case "Level3_Boss":
+                return "Level 3: Ghidorah";
                 break;
             default:
                 return "ERROR";
