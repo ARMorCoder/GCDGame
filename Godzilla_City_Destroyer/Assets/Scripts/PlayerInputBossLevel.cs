@@ -106,6 +106,7 @@ public class PlayerInputBossLevel : MonoBehaviour
             health--;
             Destroy(obj.gameObject);
         }else if(obj.tag == "EnemyMelee" && !IB){
+            GetComponent<AudioSource>().Play();
             Debug.Log("I've been hit!");
             health--;
         }else if(obj.tag == "energyPoint"){
