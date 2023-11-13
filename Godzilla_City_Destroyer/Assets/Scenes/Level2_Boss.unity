@@ -5902,7 +5902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 1095824089}
   target: {fileID: 630118168}
-  bullet: {fileID: 6262693120792424392, guid: ea0d3ef615c30814791f6c6a25c41c2a, type: 3}
+  bullet: {fileID: 5318271906613436592, guid: d8f7dc449afb32c469c010f81744ddc8, type: 3}
   leftAttack: {fileID: 1095824088}
   rightAttack: {fileID: 1095824087}
   health: 0
@@ -5912,6 +5912,7 @@ MonoBehaviour:
   hurtAudio: {fileID: 21149446}
   attackAudio: {fileID: 21149447}
   time: 0
+  pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
 --- !u!1 &1112657014
 GameObject:
   m_ObjectHideFlags: 0

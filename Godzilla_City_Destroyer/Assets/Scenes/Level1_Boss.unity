@@ -2090,6 +2090,7 @@ MonoBehaviour:
   hurtAudio: {fileID: 2074586384}
   attackAudio: {fileID: 1475334308}
   time: 0
+  pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
 --- !u!82 &1475334308
 AudioSource:
   m_ObjectHideFlags: 0

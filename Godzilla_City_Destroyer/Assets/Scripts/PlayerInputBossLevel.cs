@@ -21,8 +21,8 @@ public class PlayerInputBossLevel : MonoBehaviour
     void Awake(){
         pT = GetComponent<ProjectileThrowerBossLevel>();
         //change later 
-        health = 5;
-        energy = 15;
+        health = 8;
+        energy = 20;
 
     }
     void Start(){

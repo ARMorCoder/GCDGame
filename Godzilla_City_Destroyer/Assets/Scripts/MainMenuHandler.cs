@@ -15,6 +15,13 @@ public class MainMenuHandler : MonoBehaviour
         SceneManager.LoadScene("TitleScreen");
     }
 
+    public void Story(){
+        Time.timeScale = 1f;
+        PauseMenu.gamePause = false;
+        SceneManager.LoadScene("StoryScene");
+    }
+
+
     public void QuitGame(){
         Debug.Log("Quit Game");
         Application.Quit();

@@ -115,7 +115,7 @@ public class SlideTransition : MonoBehaviour
                 return "Level3_Boss";
                 break;
             case "Level3_Boss":
-                return "EndScene";
+                return "CreditsScene";
                 break;
             default:
                 return "TitleScreen";

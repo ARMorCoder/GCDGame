@@ -11020,6 +11020,7 @@ MonoBehaviour:
   hurtAudio: {fileID: 684019810}
   attackAudio: {fileID: 1333584620}
   time: 0
+  pointsInfo: {fileID: 11400000, guid: 8a7731e6218f8694fb3c3f09c42b7bed, type: 2}
 --- !u!1001 &1398908953
 PrefabInstance:
   m_ObjectHideFlags: 0

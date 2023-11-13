@@ -22,9 +22,11 @@ public class BossHandler : MonoBehaviour
     public AudioSource attackAudio;
     [SerializeField] float time;
 
+    public TotalPoints pointsInfo;
+    bool bossDefeat = false;
+
     void Start(){
         time = 1.0f;
-        bullet.GetComponent<SpriteRenderer>().color = Color.red;
         leftAttack.SetActive(false);
         rightAttack.SetActive(false);
         healthText.text = "Gigan: " + health;
@@ -45,6 +47,11 @@ public class BossHandler : MonoBehaviour
         }
         if(health <= 0){
             //Destroy(gameObject);
+            if(!bossDefeat){
+                pointsInfo.points += 1500;
+                pointsHandler.singleton.addPoints(1500);
+                bossDefeat = true;
+            }
             sceneCheck.currentState = 999;
         }
         healthText.text = "Gigan: " + health;

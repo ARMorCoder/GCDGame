@@ -22,6 +22,8 @@ public class FinalBossHandler : MonoBehaviour
     public AudioSource attackAudio;
 
     [SerializeField] float time;
+    public TotalPoints pointsInfo;
+    bool bossDefeat = false;
 
     void Start(){
         time = 1.0f;
@@ -33,17 +35,22 @@ public class FinalBossHandler : MonoBehaviour
     }
 
     void Awake(){
-        health =  50;
+        health =  100;
 
     }
 
     void Update(){
         shootPos = new Vector3(head.position.x, head.position.y, 0);
         tarPos = new Vector3(target.position.x, target.position.y, 0);
-        if(health <= 25){
+        if(health <= 45){
             time = 0.5f;
         }
         if(health <= 0){
+            if(!bossDefeat){
+                pointsInfo.points += 4500;
+                pointsHandler.singleton.addPoints(4500);
+                bossDefeat = true;
+            }
             sceneCheck.currentState = 999;
         }
         healthText.text = "King Ghidorah: " + health;

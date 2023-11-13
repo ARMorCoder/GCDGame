@@ -21,10 +21,12 @@ public class MegalonBossHandler : MonoBehaviour
     public AudioSource hurtAudio;
     public AudioSource attackAudio;
     [SerializeField] float time;
+    public TotalPoints pointsInfo;
+    bool bossDefeat = false;
+
 
     void Start(){
         time = 1.0f;
-        bullet.GetComponent<SpriteRenderer>().color = Color.red;
         leftAttack.SetActive(false);
         rightAttack.SetActive(false);
         healthText.text = "Megalon: " + health;
@@ -33,18 +35,23 @@ public class MegalonBossHandler : MonoBehaviour
     }
 
     void Awake(){
-        health =  50;
+        health =  75;
 
     }
 
     void Update(){
         shootPos = new Vector3(head.position.x, head.position.y, 0);
         tarPos = new Vector3(target.position.x, target.position.y, 0);
-        if(health <= 25){
+        if(health <= 30){
             time = 0.5f;
         }
         if(health <= 0){
             //Destroy(gameObject);
+            if(!bossDefeat){
+                pointsInfo.points += 2500;
+                pointsHandler.singleton.addPoints(2500);
+                bossDefeat = true;
+            }
             sceneCheck.currentState = 999;
         }
         healthText.text = "Megalon: " + health;

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OptionsScene.unity
     guid: e979f88aa09ed79439718465bfec77f3
   - enabled: 1
+    path: Assets/Scenes/StoryScene.unity
+    guid: 707bec2f0d463b14cabe668ce190e297
+  - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: fcc898c1a2054e849a619197a4930403
   - enabled: 1
@@ -32,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3_Boss.unity
     guid: 2248c667e9a963e40bc453d29b2c13fa
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 46c09c9f66498e643b340918b6cb023c
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 92f308cdf87567a468bff450d91f0bfe
