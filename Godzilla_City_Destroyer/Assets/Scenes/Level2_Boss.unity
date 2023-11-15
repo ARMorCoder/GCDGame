@@ -489,6 +489,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1418078001}
     - target: {fileID: 47754527849115542, guid: 986e0589c756ea2459c85533c229ea7a, type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 47754527849115542, guid: 986e0589c756ea2459c85533c229ea7a, type: 3}
       propertyPath: energyText
       value: 
       objectReference: {fileID: 1418078003}
@@ -5702,7 +5706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2866902078897848372, guid: 80189bb835ba0b84ea68cea2a14f2ad9, type: 3}
       propertyPath: m_Name
-      value: Boss Prefab
+      value: Megalon
       objectReference: {fileID: 0}
     - target: {fileID: 3409581462621114832, guid: 80189bb835ba0b84ea68cea2a14f2ad9, type: 3}
       propertyPath: m_Pitch
@@ -6049,8 +6053,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -205, y: -30.910004}
-  m_SizeDelta: {x: 371.04, y: 61.82}
+  m_AnchoredPosition: {x: -235.13, y: -31.410004}
+  m_SizeDelta: {x: 470.26, y: 62.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1203562862
 MonoBehaviour:
@@ -16504,7 +16508,7 @@ PrefabInstance:
     - target: {fileID: 5628814834851081637, guid: 9bc2b34b5215480479f5583abcacf7fc, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 59e137daf49ed1e489b50f32a0a93954, type: 3}
+      objectReference: {fileID: 8300000, guid: 9cd52381b9917174d92665f70d3ee00a, type: 3}
     - target: {fileID: 7367597522276595577, guid: 9bc2b34b5215480479f5583abcacf7fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6243559

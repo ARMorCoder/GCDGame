@@ -23,19 +23,19 @@ public class LevelName : MonoBehaviour
                 return "Tutorial";
                 break;
             case "Level1_City":
-                return "Level 1";
+                return "Level 1: Tokyo";
                 break;
             case "Level1_Boss":
                 return "Level 1: Gigan";
                 break;
             case "Level2_City":
-                return "Level 2";
+                return "Level 2: The Artic";
                 break;
             case "Level2_Boss":
                 return "Level 2: Megalon";
                 break;
             case "Level3_City":
-                return "Level 3";
+                return "Level 3: X Mothership";
                 break;
             case "Level3_Boss":
                 return "Level 3: Ghidorah";

@@ -6,22 +6,40 @@ using UnityEngine.UI;
 public class PlayerInputHandler : MonoBehaviour
 {
    [SerializeField] Movement movement;
+
+   [Range(0,100)]
    public int health = 1;
+
    [SerializeField] int energy;
+
    [SerializeField] Transform body;
+
    [SerializeField] Text healthText;
+
    [SerializeField] Text energyText;
+
    ProjectileThrower pT;
+
    [SerializeField] AttackAnimationChanger aac;
+
    [SerializeField] GameObject attack;
+
    [SerializeField] FootAttackAnimationStateChanger fac;
+
    [SerializeField] GameObject footAttack;
+
    [SerializeField] bool timeActive = false;
+
    [SerializeField] TimeCountDown timer;
+
    [SerializeField] bool IB = false;//invincibility 
+
    [SerializeField] int time;
 
+   bool playerDefeat = false;
+   
    public TotalPoints pointsInfo;
+
 
     void Awake(){
         attack.GetComponent<SpriteRenderer>().enabled = false;
@@ -80,9 +98,17 @@ public class PlayerInputHandler : MonoBehaviour
             if(!IB){
                 body.GetComponent<SpriteRenderer>().color = Color.white;
             }
+            if(health <= 0){
+                playerDefeat = true;
+            }
 
-            healthText.text = "Health: " + health;
-            energyText.text = "Energy: " + energy;
+            if(!playerDefeat){
+                healthText.text = "Health: " + health;
+                energyText.text = "Energy: " + energy;
+            }else{
+                healthText.text = "Health: 0";
+                energyText.text = "Energy: " + energy;
+            }
         }
     }
 
@@ -141,9 +167,13 @@ public class PlayerInputHandler : MonoBehaviour
             AudioSource audio = obj.GetComponent<AudioSource>();
              obj.GetComponent<Collider2D>().enabled = false;
             audio.Play();
-            time = obj.GetComponent<energyPowerScript>().amount;
-            timeActive = true;
-            timer.done = false;
+            if(!IB){
+                time = obj.GetComponent<energyPowerScript>().amount;
+                timeActive = true;
+                timer.done = false;
+            }else{
+                timer.addSeconds(5);
+            }
             obj.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(obj.gameObject, audio.clip.length);
 

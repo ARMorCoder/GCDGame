@@ -26,6 +26,10 @@ public class TimeCountDown : MonoBehaviour
         secondsLeft = d;
     }
 
+    public void addSeconds(int d){
+        secondsLeft += d;
+    }
+
 
     IEnumerator TimerTake(){
         takingAway = true;

@@ -11138,8 +11138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -314, y: -57}
-  m_SizeDelta: {x: 448.13, y: 66.79}
+  m_AnchoredPosition: {x: -306.88, y: -51.05}
+  m_SizeDelta: {x: 613.77, y: 65.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412192898
 MonoBehaviour:
@@ -11387,7 +11387,7 @@ PrefabInstance:
     - target: {fileID: 5628814834851081637, guid: 9bc2b34b5215480479f5583abcacf7fc, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 40302d9e5799fa44599da83bf5ad041b, type: 3}
+      objectReference: {fileID: 8300000, guid: 40113e1fe58a43947a656d2c0eeecd86, type: 3}
     - target: {fileID: 7367597522276595577, guid: 9bc2b34b5215480479f5583abcacf7fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6243559

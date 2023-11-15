@@ -6,23 +6,38 @@ using UnityEngine.UI;
 public class BossHandler : MonoBehaviour
 {
     [SerializeField] Transform head;
+
     [SerializeField] Transform target;
+    
     [SerializeField] GameObject bullet;
+    
     [SerializeField] GameObject leftAttack;
+    
     [SerializeField] GameObject rightAttack;
+    
     Vector3 shootPos = new Vector3(0,0,0);
+    
     Vector3 tarPos = new Vector3(0, 0, 0);
+    
+    [Range(0,50)]
     [SerializeField] int health;
+    
     [SerializeField] GiganAnimateStateChanger gsc;
+    
     [SerializeField] Text healthText;
+    
     int rnd;
+    
     public CentralGameScript sceneCheck;
 
     public AudioSource hurtAudio;
+
     public AudioSource attackAudio;
+
     [SerializeField] float time;
 
     public TotalPoints pointsInfo;
+
     bool bossDefeat = false;
 
     void Start(){
@@ -54,7 +69,11 @@ public class BossHandler : MonoBehaviour
             }
             sceneCheck.currentState = 999;
         }
-        healthText.text = "Gigan: " + health;
+        if(!bossDefeat){
+            healthText.text = "Gigan: " + health;
+        }else{
+            healthText.text = "Gigan Defeated";
+        }
     }
 
      void SpawnBulletOverTime(){

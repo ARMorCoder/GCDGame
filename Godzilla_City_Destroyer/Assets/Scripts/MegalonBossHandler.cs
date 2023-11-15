@@ -6,22 +6,38 @@ using UnityEngine.UI;
 public class MegalonBossHandler : MonoBehaviour
 {
     [SerializeField] Transform head;
+    
     [SerializeField] Transform target;
+    
     [SerializeField] GameObject bullet;
+    
     [SerializeField] GameObject leftAttack;
+    
     [SerializeField] GameObject rightAttack;
+    
     Vector3 shootPos = new Vector3(0,0,0);
+    
     Vector3 tarPos = new Vector3(0, 0, 0);
+
+    [Range(0,75)]
     [SerializeField] int health;
+    
     [SerializeField] MegalonAnimateStateChanger msc;
+    
     [SerializeField] Text healthText;
+    
     int rnd;
+    
     public CentralGameScript sceneCheck;
 
     public AudioSource hurtAudio;
+    
     public AudioSource attackAudio;
+    
     [SerializeField] float time;
+    
     public TotalPoints pointsInfo;
+    
     bool bossDefeat = false;
 
 
@@ -54,7 +70,11 @@ public class MegalonBossHandler : MonoBehaviour
             }
             sceneCheck.currentState = 999;
         }
-        healthText.text = "Megalon: " + health;
+        if(!bossDefeat){
+            healthText.text = "Megalon: " + health;
+        }else{
+            healthText.text = "Megalon Defeated";
+        }
     }
 
      void SpawnBulletOverTime(){
