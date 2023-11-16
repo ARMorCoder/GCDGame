@@ -412,7 +412,7 @@ RectTransform:
   m_GameObject: {fileID: 344808554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1902948909}
@@ -420,7 +420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 334, y: -323}
+  m_AnchoredPosition: {x: 343, y: -333}
   m_SizeDelta: {x: 602.63, y: 166.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344808556
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb03a7179f60e784db1c31aa94db1aa3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa1ef9cd4f12c134684e24d9b5a77e7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1551,7 +1551,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e9ea0416483fe7e4abd538343c740440, type: 3}
-    m_FontSize: 55
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1606,8 +1606,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -516, y: -104.98001}
-  m_SizeDelta: {x: 975.0801, y: 160.04999}
+  m_AnchoredPosition: {x: -516, y: -107.369995}
+  m_SizeDelta: {x: 975.08, y: 164.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642110097
 MonoBehaviour:
@@ -2005,8 +2005,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -4.12}
+  m_SizeDelta: {x: 0, y: -61.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902948910
 MonoBehaviour:
@@ -2030,10 +2030,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e9ea0416483fe7e4abd538343c740440, type: 3}
-    m_FontSize: 75
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 7
+    m_MinSize: 5
     m_MaxSize: 75
     m_Alignment: 4
     m_AlignByGeometry: 0

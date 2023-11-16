@@ -229,14 +229,14 @@ RectTransform:
   m_GameObject: {fileID: 210197394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.67, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1123066299}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -9}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210197396
@@ -625,7 +625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.19501, y: -4.9}
   m_SizeDelta: {x: 410, y: 98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &872707167
@@ -860,7 +860,7 @@ RectTransform:
   m_GameObject: {fileID: 1123066298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 210197395}
@@ -868,7 +868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000009536743, y: -108}
+  m_AnchoredPosition: {x: -0.000061035, y: -158}
   m_SizeDelta: {x: 409.61, y: 97.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1123066300
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb03a7179f60e784db1c31aa94db1aa3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa1ef9cd4f12c134684e24d9b5a77e7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -988,6 +988,10 @@ PrefabInstance:
     - target: {fileID: 6110439538240467138, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: m_Name
       value: ScreenSlideCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110439538240467138, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7669557494614378426, guid: d1f8294feb3a6954986e0dab7dec3be4, type: 3}
       propertyPath: m_Pivot.x
@@ -1181,7 +1185,7 @@ RectTransform:
   m_GameObject: {fileID: 1597838668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.44, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 872707166}
@@ -1268,7 +1272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb03a7179f60e784db1c31aa94db1aa3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa1ef9cd4f12c134684e24d9b5a77e7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

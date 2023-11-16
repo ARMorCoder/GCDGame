@@ -21,7 +21,7 @@ public class CreditsSlide : MonoBehaviour
             float timer = 0f;
             while(timer < slideTime){
                 timer+=Time.deltaTime;
-                creditsImage.position = Vector3.Lerp(creditsImage.position, inTransform.position, (timer/slideTime) / 1000);
+                creditsImage.position = Vector3.Lerp(creditsImage.position, inTransform.position, (timer/slideTime) / 900);
                 yield return null;
             }
             Debug.Log("End Credits");
